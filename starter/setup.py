@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="starter",
+    name="Heroku-Fast-API-ML",
     version="0.0.0",
-    description="Starter code.",
-    author="Student",
+    description="Code for Ml Heroku deployment with Fast API ",
+    author="Anjik Chowdhury",
 )
