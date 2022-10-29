@@ -49,6 +49,6 @@ def train_test_model():
     )
     trained_model = src.common_functions.train_model(X_train, y_train)
 
-    dump(trained_model, "data/model/model.joblib")
-    dump(encoder, "data/model/encoder.joblib")
-    dump(lb, "data/model/lb.joblib")
+    dump(trained_model, "data/model_data/model.joblib")
+    dump(encoder, "data/model_data/encoder.joblib")
+    dump(lb, "data/model_data/lb.joblib")
