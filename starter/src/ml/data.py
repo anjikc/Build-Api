@@ -2,6 +2,22 @@ import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
 
+def get_cat_features():
+    """ Return feature categories
+    """
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
+    return cat_features
+
+
 def process_data(
     X, categorical_features=[], label=None, training=True, encoder=None, lb=None
 ):

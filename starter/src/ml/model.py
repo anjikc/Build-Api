@@ -25,8 +25,13 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-
-    pass
+    cv = KFold(n_splits=10, shuffle=True, random_state=1)
+    model = GradientBoostingClassifier(n_estimators=100)
+    model.fit(X_train, y_train)
+    scores = cross_val_score(model, X_train, y_train, scoring='accuracy',
+                             cv=cv, n_jobs=-1)
+    logging.info('Resulting Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
+    return model
 
 
 def compute_model_metrics(y, preds):
@@ -65,4 +70,5 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    y_preds = model.predict(X)
+    return y_preds
