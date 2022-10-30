@@ -37,8 +37,8 @@ def test_process_encoder(data):
     """
     Check split have same number of rows for X and y
     """
-    encoder_test = load("data/model/encoder.joblib")
-    lb_test = load("data/model/lb.joblib")
+    encoder_test = load("data/model_data/encoder.joblib")
+    lb_test = load("data/model_data/lb.joblib")
 
     _, _, encoder, lb = src.common_functions.process_data(
         data,
@@ -58,9 +58,9 @@ def test_inference_above():
     """
     Check inference performance
     """
-    model = load("data/model/model.joblib")
-    encoder = load("data/model/encoder.joblib")
-    lb = load("data/model/lb.joblib")
+    model = load("data/model_data/model.joblib")
+    encoder = load("data/model_model_data/encoder.joblib")
+    lb = load("data/model_data/lb.joblib")
 
     array = np.array([[
                      32,
@@ -100,9 +100,9 @@ def test_inference_below():
     """
     Check inference performance
     """
-    model = load("data/model/model.joblib")
-    encoder = load("data/model/encoder.joblib")
-    lb = load("data/model/lb.joblib")
+    model = load("data/model_data/model.joblib")
+    encoder = load("data/model_data/encoder.joblib")
+    lb = load("data/model_data/lb.joblib")
 
     array = np.array([[
                      19,
