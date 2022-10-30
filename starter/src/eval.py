@@ -16,9 +16,9 @@ def eval_score():
     df = pd.read_csv("data/prepared/census.csv")
     _, test = train_test_split(df, test_size=0.20)
 
-    trained_model = load("data/model/model.joblib")
-    encoder = load("data/model/encoder.joblib")
-    lb = load("data/model/lb.joblib")
+    trained_model = load("data/model_data/model.joblib")
+    encoder = load("data/model_data/encoder.joblib")
+    lb = load("data/model_data/lb.joblib")
 
     sliced_values = []
 
