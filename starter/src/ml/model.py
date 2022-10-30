@@ -26,7 +26,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     cv = KFold(n_splits=10, shuffle=True, random_state=1)
-    model = GradientBoostingClassifier(n_estimators=100)
+    model = GradientBoostingClassifier(n_estimators=100,min_samples_split=2, min_samples_leaf=1)
     model.fit(X_train, y_train)
     scores = cross_val_score(model, X_train, y_train, scoring='accuracy',
                              cv=cv, n_jobs=-1)
