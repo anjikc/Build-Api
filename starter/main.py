@@ -7,6 +7,14 @@ import src.train_model
 import src.eval
 import logging
 
+import os
+
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 def execute(args):
     """
@@ -47,3 +55,4 @@ if __name__ == "__main__":
     main_args = parser.parse_args()
 
     execute(main_args)
+

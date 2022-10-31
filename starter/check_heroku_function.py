@@ -16,9 +16,9 @@ data = {
     "hoursPerWeek": 40,
     "nativeCountry": "United-States"
     }
-r = requests.post('https://ml-heroku-fastapi.herokuapp.com/', json=data)
+r = requests.post('https://dashboard.heroku.com/apps/income-pred-ml-ud/', json=data)
 
-assert r.status_code == 200 # 200 indicates that the request has succeeded
+assert r.status_code == 200 
 
 print("Response code: %s" % r.status_code)
 print("Response body: %s" % r.json())
