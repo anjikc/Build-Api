@@ -1,7 +1,7 @@
 # Model Card
 For additional information see the Model Card paper: https://arxiv.org/pdf/1810.03993.pdf
 ## Model Details
-Gradient Boosting Classifier was used with sum default estimators 
+Gradient Boosting Classifier was used with some default estimators 
 ## Intended Use
 Predict the target variable which is salary based on some features 
 ## Training Data
