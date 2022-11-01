@@ -1,7 +1,7 @@
 #importing libraries 
 import logging
 import numpy as np
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.metrics import fbeta_score, precision_score, recall_score,accuracy_score
 from numpy import mean
 from numpy import std
 from sklearn.model_selection import KFold
@@ -72,3 +72,22 @@ def inference(model, X):
     """
     y_preds = model.predict(X)
     return y_preds
+
+def classification_metrics(y, preds):
+    """
+    Calculates Accuracy score 
+
+    Inputs
+    ------
+    y : np.array
+        Known labels, binarized.
+    preds : np.array
+        Predicted labels, binarized.
+    Returns
+    -------
+    precision : float
+    recall : float
+    fbeta : float
+    """
+    accrcy= accuracy_score(y, preds, normalize=True)
+    return accrcy

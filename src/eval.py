@@ -44,3 +44,9 @@ def eval_score():
     with open('data/model_data/slicedoutput.txt', 'w') as out:
         for value in sliced_values:
             out.write(value + '\n')
+    
+    X_test, y_test, _, _ = src.ml.data.process_data(
+    test,categorical_features=src.ml.data.get_cat_features(),label="salary", encoder=encoder, lb=lb, training=False)
+    y_preds = trained_model.predict(X_test)
+    acracy=src.ml.model.classification_metrics(y_test,y_preds)
+    print(f"Accuracy of whole test model is:{acracy}")
