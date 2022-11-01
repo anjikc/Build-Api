@@ -25,15 +25,3 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Run pytest
         run: pytest
-  deploy:
-   runs-on: ubuntu-latest
-   needs: [test]
-    
-   steps:
-     - uses: actions/checkout@v3
-     - name: Deploy app to Heroku
-       uses: akhileshns/heroku-deploy@v3.12.12
-       with:
-         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-         heroku_app_name: ml-pipeline
-         heroku_email: ${{secrets.HEROKU_EMAIL}}
