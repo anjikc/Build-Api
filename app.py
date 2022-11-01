@@ -99,7 +99,7 @@ async def inference(user_data: User):
 
     X, _, _, _ = src.ml.data.process_data(
                 df_temp,
-                categorical_features=src.common_functions.get_cat_features(),
+                categorical_features=src.ml.data.get_cat_features(),
                 encoder=encoder, lb=lb, training=False)
     pred = src.ml.model.inference(model, X)
     y = lb.inverse_transform(pred)[0]
